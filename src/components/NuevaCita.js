@@ -68,6 +68,7 @@ class NuevaCita extends Component {
                               
                             </div>
                         </div> {/*form-group*/}
+                        
 
                         <input type="submit" className="py-3 mt-2 btn btn-success btn-block" value="Agregar nueva cita" />
 
