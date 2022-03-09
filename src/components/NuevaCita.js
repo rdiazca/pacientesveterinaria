@@ -1,17 +1,19 @@
 import React,{Component} from 'react';
 import {v4 as uuid} from 'uuid';
 
+const stateInicial = { 
+    cita : {
+        mascota : '',
+        propietario : '',
+        fecha : '',
+        hora : '',
+        sintomas : ''
+    },
+    error: false
+}
+
 class NuevaCita extends Component {
-    state={ 
-        cita : {
-            mascota : '',
-            propietario : '',
-            fecha : '',
-            hora : '',
-            sintomas : ''
-        },
-        error: false
-    }
+    state = { ...stateInicial }
 
     //Cuando el usuario escribe en los inputs
     handleChange = e => {
@@ -41,11 +43,11 @@ class NuevaCita extends Component {
             //detener la ejecución
             return;
         }
-        else{
+       /* else{
             this.setState({
                 error: false
             });
-        }
+        }*/
 
         //generar objeto con los datos
         const nuevaCita = {...this.state.cita};
@@ -53,7 +55,10 @@ class NuevaCita extends Component {
         //agregar la cita al state de App
         this.props.crearNuevaCita(nuevaCita)
 
-
+        //Colocar en el state el stateInicial
+        this.setState({
+            ...stateInicial
+        })
 
     }
     render() {
