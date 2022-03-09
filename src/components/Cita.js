@@ -1,5 +1,4 @@
 import React from 'react'
-import ListaCitas from './ListaCitas';
 import PropTypes from 'prop-types';
 
 const Cita = ({cita, eliminarCita}) => (
