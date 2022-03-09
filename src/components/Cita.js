@@ -1,5 +1,6 @@
 import React from 'react'
 import ListaCitas from './ListaCitas';
+import PropTypes from 'prop-types';
 
 const Cita = ({cita, eliminarCita}) => (
        <div className='media mt-3'>
@@ -18,6 +19,11 @@ const Cita = ({cita, eliminarCita}) => (
            </div>
        </div>
     );
+
+    Cita.propTypes = {
+        cita : PropTypes.object.isRequired,
+        eliminarCita : PropTypes.func.isRequired
+    }
 
 export default Cita;
 
